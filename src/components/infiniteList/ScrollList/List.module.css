@@ -1,0 +1,24 @@
+
+.back{
+     background:linear-gradient(0deg, rgba(49, 10, 33, 0.89), rgba(45, 10, 76, 0.85)), url('https://www.significadofacil.com/wp-content/uploads/2019/07/background.jpg');
+
+}
+
+.list{
+    overflow: hidden;
+    margin: 0 auto;
+    width: 80%;
+
+}
+
+.inner{
+    display: flex;
+    align-items: start;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.buttons{
+    margin: 1rem auto;
+    width: 5rem;
+}

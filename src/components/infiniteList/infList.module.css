@@ -1,0 +1,5 @@
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+     background: #1a1818;
+}

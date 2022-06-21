@@ -1,0 +1,28 @@
+.caption{
+    inline-size: 150px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    white-space: normal;
+    margin-top: -2px;
+    color: white;
+}
+
+.type{
+    position: absolute;
+    padding: .3rem;
+    background: yellow;
+    border-radius: .1rem;
+}
+
+.rating{
+    position: absolute;
+    padding: .3rem;
+    color: yellow;
+    background: rgba(40, 44, 52, 0.72);
+    border: 2px yellow solid;
+    width: 1.3rem;
+    text-align: center;
+    margin-left: 7.6rem;
+    margin-top: .6rem;
+    border-radius: 50%;
+}

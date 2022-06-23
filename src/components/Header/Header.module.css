@@ -1,20 +1,17 @@
 .header{
-    padding: 1.4rem;
-    background: #1a1818;
+    height: 2.4rem;
+    padding: 1rem;
+    background: #02070c;
+    display: flex;
+}
+.img{
+    height: 40px;
+    width: 80px;
+    margin-left: 2rem;
+
+
 }
 
-.sIcon{
-    margin-left: -2rem;
-}
-.input{
-    border-radius: .2rem;
-    padding: .4rem;
-    padding-left: 1rem;
-    width: 20%;
-    background: #181717;
-    border: 2px rgba(255, 255, 255, 0.38) solid;
-    color: white;
-}
 
 .input:focus{
     outline: none;

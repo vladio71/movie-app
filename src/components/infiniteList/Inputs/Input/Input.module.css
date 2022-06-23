@@ -1,0 +1,16 @@
+
+.sIcon{
+    margin-left: -2rem;
+}
+.input{
+    margin: 2rem auto;
+    width: 15rem;
+    border-radius: .2rem;
+    padding: .6rem;
+    padding-left: 1rem;
+    background: #181717;
+    border: 2px rgba(255, 255, 255, 0.38) solid;
+    color: white;
+
+
+}

@@ -13,46 +13,64 @@ const instance = axios.create({
 
 export const Api = {
     getNewTitles: async () => {
-        const result = await instance.get('titles/', {
+        const result = await instance.get('titles/x/upcoming', {
             params: {
                 info: 'base_info',
                 limit: '50',
-                year: '2022'
             }
         })
-        console.log(result)
         return result.data.results
     },
 }
 
-export function useFetch(page) {
-     const [loading, setLoading] = useState(true)
+export function useFetch(keyword, page, params) {
+
+    if (keyword == '') keyword = 'hero'
+    const [loading, setLoading] = useState(true)
     const [error, setError] = useState(true)
     const [list, setList] = useState([])
+    params['page']=page
 
     const sendQuery = useCallback(async () => {
         try {
             await setLoading(true)
             await setError(false)
-            const result = await instance.get('titles', {
-                params: {
-                    info: 'base_info',
-                    limit: '10',
-                    year: '2021',
-                    page: page
-                }
+            const result = await instance.get(`titles/search/keyword/${keyword}`, {
+                params: params
             })
-            await setList ((prev)=>[...prev,...result.data.results])
+            await setList((prev) => [...prev, ...result.data.results])
             setLoading(false)
         } catch (e) {
             setError(e)
         }
 
-    })
-    useEffect(()=>{
-         console.log(fetch)
+    }, [keyword, page])
+    useEffect(() => {
         sendQuery()
-    },[page])
+    }, [keyword, page])
 
-    return {list, loading, error}
+    return {list, setList}
+}
+
+export function useUtilsFetch() {
+    const [genres, setGanres] = useState([])
+    const [types, setTypes] = useState([])
+
+    const Query = useCallback(async () => {
+        try {
+            const tResult = await instance.get('titles/utils/titleTypes')
+            setTypes(tResult.data.results)
+            const gResult = await instance.get('titles/utils/genres')
+            setGanres(gResult.data.results)
+        } catch (e) {
+            console.log(e)
+        }
+    }, [])
+
+    useEffect(() => {
+        Query()
+    }, [])
+
+    return {genres, types}
+
 }

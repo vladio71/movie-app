@@ -1,5 +1,25 @@
-.flex{
+
+.wrapper{
+     min-height: 50vh;
+}
+
+
+.flex {
     display: flex;
     flex-wrap: wrap;
-     background: #1a1818;
+
 }
+
+.back {
+    background: rgb(19, 4, 13);
+    flex: 1 1 auto;
+ }
+
+.marginCenter {
+    width: fit-content;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+ }
+

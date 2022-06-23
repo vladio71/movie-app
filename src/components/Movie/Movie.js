@@ -1,6 +1,7 @@
 import React from "react";
 import {styled} from "@mui/material";
 import css from './Movie.module.css'
+
 const Div = styled('div')({
     display: 'inline-block',
     margin: '1.4rem'
@@ -18,12 +19,18 @@ const Movie = (props) => {
             <span className={css.rating}>{ratingsSummary.aggregateRating}</span>
 
             }
-             <img style={{width: '200px', height: '300px'}} src={primaryImage.url}/>
-            {releaseDate != null &&
+            {/*src={primaryImage.url}*/}
+            <img style={{width: '200px', height: '300px'}} src={`${primaryImage.url}`}/>
+
+
             <p className={css.caption}>
-                {titleText.text} ({releaseDate.year})
+                {titleText.text}
+                {releaseDate != null &&
+                <>
+                    {"\n"}({releaseDate.year})
+                </>
+                }
             </p>
-            }
 
         </Div>
     )

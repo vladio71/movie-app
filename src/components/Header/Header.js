@@ -5,16 +5,11 @@ import {useState} from "react";
 
 
 function Header() {
-    const [inp, setInput] = useState('')
-    return (
+     return (
         <div className={sa.header}>
-            <input placeholder={'сеарчЛимитедЕдишн'} className={sa.input} onChange={(e) => setInput(e.target.value)}
-                   type={"text"}/>
-            <span className={sa.sIcon}>
-                <IconButton color={'secondary'} aria-label="delete">
-                     <SearchIcon/>
-                 </IconButton>
-            </span>
+            <img  className={sa.img} src={'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/2560px-IMDB_Logo_2016.svg.png'}/>
+
+
 
         </div>
     );
